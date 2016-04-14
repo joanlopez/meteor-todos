@@ -28,13 +28,22 @@
 </body>
 
 <template name="main">
+  <!-- FORM NEW TODO -->
+  <form class="new-todo">
+    <div class="form-group">
+      <input type="text" name="text" class="form-control" placeholder="Type a todo..">
+    </div>
+  </form>
+  <!-- END FORM NEW TODO -->
+  <!-- LIST TODOS -->
   <ul>
   {{#each todos}}
-    <li>
+    <li class="{{#if checked}}checked{{/if}}">
       <button class="delete-todo">&times;</button>
-      <input type="checkbox" class="toggle-check">
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked">
       <span class="text">{{text}}</span>
     </li>
   {{/each}}
   </ul>
+  <!-- END LIST TODOS -->
 </template>
