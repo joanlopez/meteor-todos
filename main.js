@@ -1,6 +1,7 @@
 Todos = new Mongo.Collection('todos');
 
 if(Meteor.isClient) {
+	Meteor.subscribe('todos');
 	//Template helpers
 	Template.main.helpers({
 		todos: function() {
@@ -30,8 +31,8 @@ if(Meteor.isClient) {
 
 	});
 
-	accounts.ui.config({
-		passwordSignupFields: 'USERNAME ONLY'
+	Accounts.ui.config({
+		passwordSignupFields: 'USERNAME_ONLY'
 	});
 }
 
