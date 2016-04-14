@@ -26,7 +26,7 @@ if(Meteor.isClient) {
 			Todos.update(this._id, {$set:{checked: !this.checked}});
 		},
 		"click .delete-todo": function(event) {
-			if(confirm('Are you sure?') {
+			if(confirm('Are you sure?')) {
 				Todos.remove(this._id);	
 			}
 		}
